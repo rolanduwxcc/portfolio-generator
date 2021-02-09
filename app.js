@@ -15,10 +15,8 @@ const generatePage = (userName, githubName) => {
     </head>
 
     <body>
-
-        Name: ${userName}, 
-        Github: ${githubName}
-    
+        <h1>${userName}</h1>
+        <h2><a href="https://github.com/${githubName}">Github</a></h2>
     </body>
     </html>
     `;
