@@ -1,7 +1,11 @@
+//--------------------------Modules
+const fs = require('fs');
+
+//--------------------------Variables
 const profileDataArgs = process.argv.slice(2, process.argv.length);
 // const name = profileDataArgs[0];
 // const github = profileDataArgs[1];
-const [name, github] = profileDataArgs;
+const [userName, githubName] = profileDataArgs;
 
 const generatePage = (userName, githubName) => {
     return `
@@ -22,5 +26,8 @@ const generatePage = (userName, githubName) => {
     `;
 };
 
-console.log(name, github);
-console.log(generatePage(name,github));
+fs.writeFile('index.html',generatePage(userName, githubName), err => {
+    if (err) throw err;
+
+    console.log('Portfolio complete! Check out index.html to see the output!');
+});
