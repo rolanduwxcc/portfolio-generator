@@ -1,25 +1,28 @@
 const profileDataArgs = process.argv.slice(2, process.argv.length);
-// console.log(profileDataArgs);
+// const name = profileDataArgs[0];
+// const github = profileDataArgs[1];
+const [name, github] = profileDataArgs;
 
+const generatePage = (userName, githubName) => {
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Portfolio Demo</title>
+    </head>
 
-const printProfileData = profileDataArr => {
+    <body>
+
+        Name: ${userName}, 
+        Github: ${githubName}
     
-    //This for loop.....
-    for (let i = 0; i < profileDataArr.length; i++) {
-        const element = profileDataArr[i];
-        console.log(element);
-    }
-
-    console.log("====================");
-
-    //Is the same as this...
-    profileDataArr.forEach((profileItem) => {
-        console.log("fe"+profileItem);
-    });
-
-    console.log("====================");
-
-    profileDataArr.forEach(profileItem => console.log(profileItem));
+    </body>
+    </html>
+    `;
 };
 
-printProfileData(profileDataArgs);
+console.log(name, github);
+console.log(generatePage(name,github));
