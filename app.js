@@ -15,7 +15,7 @@ const promptProject = () => {
     `);
     return inquirer.prompt([
         {
-            name: 'projectName',
+            name: 'name',
             type: 'input',
             message: 'What is the name of your project? (required)',
         },
@@ -25,24 +25,24 @@ const promptProject = () => {
             message: 'Describe your project. (required)',
         },
         {
-            name: 'builtWith',
+            name: 'languages',
             type: 'checkbox',
             message: 'What technologies were used? (Check all that apply)',
             choices: ['html', 'css', 'javaScript', 'ES6', 'node','bootstrap'],
         },
         {
-            name: 'url',
+            name: 'link',
             type: 'input',
             message: 'Enter GitHub link to project. (required)',
         },
         {
-            name: 'feature?',
+            name: 'feature',
             type: 'confirm',
             message: 'Would you like to feature this project?',
             default: false,
         },
         {
-            name: 'doAgain',
+            name: 'confirmAddProject',
             type: 'confirm',
             message: 'Would you like to enter another project?',
             default: false,
@@ -53,20 +53,19 @@ const promptProject = () => {
 const promptUser = () => {
     return inquirer.prompt([
         {
-            name: 'userName',
+            name: 'name',
             type: 'input',
             message: 'What is your name? (required)',
         },
         {
-            name: 'githubName',
+            name: 'github',
             type: 'input',
             message: 'What is your GitHub Username? (required)',
         },
         {
-            name: 'enterAboutMe',
-            type: 'confirm',
-            message: 'Would you like to enter some information about yoself for an "about" section?',
-            default: false,
+            name: 'about',
+            type: 'input',
+            message: 'Provide some information about yoself: ',
         },
     ]);
         // .then((answer) => {
