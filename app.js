@@ -23,11 +23,27 @@ const promptProject = portfolioData => {
             name: 'name',
             type: 'input',
             message: 'What is the name of your project? (required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a project name!');
+                    return false;
+                }
+            }
         },
         {
             name: 'description',
             type: 'input',
             message: 'Describe your project. (required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a project description!');
+                    return false;
+                }
+            }
         },
         {
             name: 'languages',
@@ -39,6 +55,14 @@ const promptProject = portfolioData => {
             name: 'link',
             type: 'input',
             message: 'Enter GitHub link to project. (required)',
+            validate: linkInput => {
+                if (linkInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the GitHub link!');
+                    return false;
+                }
+            }
         },
         {
             name: 'feature',
@@ -70,11 +94,27 @@ const promptUser = () => {
             name: 'name',
             type: 'input',
             message: 'What is your name? (required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name!');
+                    return false;
+                }
+            }
         },
         {
             name: 'github',
             type: 'input',
             message: 'What is your GitHub Username? (required)',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub Username!');
+                    return false;
+                }
+            }
         },
         {
             name: 'about',
