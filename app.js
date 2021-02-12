@@ -143,17 +143,25 @@ const promptUser = () => {
 };
 
 //UNCOMMENT AFTER TESTING
-// promptUser()
-//     .then(promptProject)
-//     .then(portfolioData => {
-//         const pageHTML = generatePage(portfolioData);
+promptUser()
+    .then(promptProject)
+    .then(portfolioData => {
+        const pageHTML = generatePage(portfolioData);
 
-//         //fs.writeFile('./index.html', pageHTML, err => {
-//         //     if(err) throw new Error(err);
+        fs.writeFile('./dist/index.html', pageHTML, err => {
+            if(err) throw new Error(err);
 
-//         //     console.log('Page created! Check out indext.html in this directory');
-//         // });
-//     });
+            console.log('Page created! Check out indext.html in this directory');
+
+            fs.copyFile('./src/style.css', './dist/style.css', err => {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log('Style sheet copied successfully!');
+            });
+        });
+    });
 
 let mockData = {
     name: 'Lernantino',
@@ -200,9 +208,17 @@ let mockData = {
         }
     ]
 };
-const pageHTML = generatePage(mockData);
-fs.writeFile('./dist/index.html', pageHTML, err => {
-    if (err) throw new Error(err);
+// const pageHTML = generatePage(mockData);
+// fs.writeFile('./dist/index.html', pageHTML, err => {
+//     if (err) throw new Error(err);
 
-    console.log('Page created! Check out indext.html in this directory');
-});
+//     console.log('Page created! Check out indext.html in this directory');
+
+//     fs.copyFile('./src/style.css', './dist/style.css', err => {
+//         if (err) {
+//             console.log(err);
+//             return;
+//         }
+//         console.log('Style sheet copied successfully!');
+//     });
+// });
