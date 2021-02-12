@@ -201,7 +201,7 @@ let mockData = {
     ]
 };
 const pageHTML = generatePage(mockData);
-fs.writeFile('./index.html', pageHTML, err => {
+fs.writeFile('./dist/index.html', pageHTML, err => {
     if (err) throw new Error(err);
 
     console.log('Page created! Check out indext.html in this directory');
