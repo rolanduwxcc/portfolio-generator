@@ -57,3 +57,15 @@ const copyFile = () => {
 // //Test function above by calling it as is to test Reject
 // //Adjust relative path to tetst Resolve case
 // copyFile();
+
+
+//----------------------------EXPORT...OPTION 1 SYNTAX
+// module.exports = {
+//     writeFile: writeFile,
+//     copyFile: copyFile
+// };
+// 
+//----OR---------------------OPTION 2 SYNTAX
+//written this way, using `shorthand property names`
+//can use when property key anme is same name as value!!!!
+module.exports = {writeFile, copyFile};
